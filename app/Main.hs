@@ -4,4 +4,5 @@ import Lib
 
 main :: IO ()
 main = do
-  print $ chi [3, 2, 2, 1, 1] [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  print $ characterTable 4
+  print [[innerProduct 4 (chi lam) (chi mu) | lam <- partitions 4] | mu <- partitions 4]
