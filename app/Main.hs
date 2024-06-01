@@ -1,8 +1,10 @@
 module Main (main) where
 
 import Lib
+import Control.Monad (forM_)
 
 main :: IO ()
 main = do
-  print $ characterTable 4
-  print [[innerProduct 4 (chi lam) (chi mu) | lam <- partitions 4] | mu <- partitions 4]
+  n <- readLn
+  let tbl = characterTable n
+  forM_ tbl (\row -> print row)
