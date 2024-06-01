@@ -18,6 +18,7 @@ module Lib (
 ) where
 
 import Data.List (group)
+import qualified Data.MemoCombinators as Memo
 import Data.Ratio (numerator, (%))
 
 type Composition = [Int]
@@ -71,15 +72,18 @@ boxes lam = concatMap (\(i, l) -> map (\j -> (i, j)) l) $ zip [0 ..] a
   a = map (\j -> [0 .. j - 1]) lam
 
 -- Compute irreducible characters using the Murnaghan-Nakayama Formula
-chi :: Partition -> Character
-chi [] _ = 1
-chi lam (c : cs) = sum (zipWith (*) sgn a)
+chi' :: Partition -> Character
+chi' [] _ = 1
+chi' lam (c : cs) = sum (zipWith (*) sgn a)
  where
   hooks = filter ((== c) . hookLength lam) $ boxes lam
   a = map (\p -> chi (removeRim lam p) cs) hooks
   -- sgn = map (\p -> (-1) ^ (legLength lam p)) hooks
   sgn = map (((-1) ^) . legLength lam) hooks
-chi _ _ = undefined
+chi' _ _ = undefined
+
+chi :: Partition -> Character
+chi = Memo.memo2 (Memo.list Memo.integral) (Memo.list Memo.integral) chi'
 
 characterTable :: Int -> [[Int]]
 characterTable n = [[chi lam cyc | cyc <- partitions n] | lam <- partitions n]
