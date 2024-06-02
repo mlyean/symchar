@@ -1,6 +1,6 @@
 name:                symchar
 version:             0.1.0.0
-github:              "githubuser/symchar"
+github:              "mlyean/symchar"
 license:             BSD-3-Clause
 author:              "Ming Yean Lim"
 maintainer:          "example@example.com"
