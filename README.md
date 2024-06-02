@@ -4,7 +4,7 @@ This package contains functions to compute the irreducible characters of symmetr
 
 ## Usage
 
-The library functions are located in `src`. The individual characters may be computed using `chi` (in `Character`), which is based on the Murnaghan-Nakayama formula. Functions to (naively) computed plethysm coefficients are located in `Plethysm`.
+The library functions are located in `src`. The individual characters may be computed using `chi` (in `Character`), which is based on the Murnaghan-Nakayama formula. Functions to (naively) compute plethysm coefficients are located in `Plethysm`.
 
 ## Installation
 
