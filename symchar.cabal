@@ -6,12 +6,12 @@ cabal-version: 2.2
 
 name:           symchar
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/symchar#readme>
+description:    Please see the README on GitHub at <https://github.com/mlyean/symchar#readme>
 homepage:       https://github.com/githubuser/symchar#readme
 bug-reports:    https://github.com/githubuser/symchar/issues
-author:         Author name here
+author:         Ming Yean Lim
 maintainer:     example@example.com
-copyright:      2024 Author name here
+copyright:      2024 Ming Yean Lim
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
@@ -25,7 +25,11 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Character
+      Misc
+      Partition
+      PermutationCharacter
+      Plethysm
   other-modules:
       Paths_symchar
   autogen-modules:

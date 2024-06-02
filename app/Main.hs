@@ -5,7 +5,7 @@ module Main (main) where
 import Control.Monad (forever)
 import Data.ByteString.Builder
 import Data.List (intersperse)
-import Lib
+import Character
 import System.IO (stdout)
 
 main :: IO ()
